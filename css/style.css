@@ -27,6 +27,7 @@ body {
 }
 .site-header.hide {
   transform: translateY(-100%);
+  transition: transform 0.4s ease;
 }
 
 .site-name {
@@ -204,18 +205,6 @@ body {
 }
 
 /* ===== Header ===== */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-
 .site-name {
   color: #fff;
 }
@@ -275,13 +264,13 @@ main {
 
 /* ===== Fullscreen Slideshow ===== */
 .hero {
-  height: 100vh;
+  height: 100svh;
   padding: 0;
 }
 
 .slideshow {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   position: relative;
   overflow: hidden;
   background: #000;
@@ -291,7 +280,7 @@ main {
 .slide {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   inset: 0;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -305,7 +294,7 @@ main {
 
 .slide img {
   width: 100%;
-  height: 100vh; 
+  height: 100%; 
   object-fit: cover; 
   display: block;
 }
@@ -314,7 +303,12 @@ main {
 .site-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: transparent;
   z-index: 1000;
 }
@@ -354,7 +348,7 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
@@ -578,26 +572,22 @@ main {
   opacity: 1;
 }
 
-
 .about-page {
-  background-image: url("../img/bg/aboutbg.jpg");
+  min-height: 100svh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../img/bg/aboutbg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .contact-page {
-  background-image: url("../img/bg/contactbg.jpg");
+  min-height: 100svh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../img/bg/contactbg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.about-page::before,
-.contact-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6); /* 濃さ調整 */
-  z-index: -1;
 }

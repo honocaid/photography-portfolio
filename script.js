@@ -43,27 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 　// ヘッダースクロール消去
+let lastScroll = 0;
+const header = document.querySelector(".site-header");
 
-if (document.body.classList.contains("works-page")) {
+window.addEventListener("scroll", () => {
 
-  let lastScroll = 0;
-  const header = document.querySelector(".site-header");
+  const currentScroll = window.pageYOffset;
 
-  window.addEventListener("scroll", () => {
+  if (currentScroll > lastScroll && currentScroll > 40) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
 
-    const currentScroll = window.pageYOffset;
-
-    if (Math.abs(currentScroll - lastScroll) < 20) return;
-
-    if (currentScroll > lastScroll && currentScroll > 120) {
-      header.classList.add("hide");
-    } else {
-      header.classList.remove("hide");
-    }
-
-    lastScroll = currentScroll;
-  });
-}
+  lastScroll = currentScroll;
+});
 
 const images = document.querySelectorAll('.photo-grid img');
 const lightbox = document.getElementById('lightbox');
