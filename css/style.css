@@ -1,0 +1,603 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.7;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.site-header.hide {
+  transform: translateY(-100%);
+}
+
+.site-name {
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.8;
+}
+
+.site-nav a {
+  margin-left: 20px;
+  font-size: 11px;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.4;
+}
+
+.site-nav a:hover {
+  opacity: 0.8;
+}
+
+
+
+/* ===== Works Page ===== */
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.works {
+  padding: 140px 40px 100px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Category ===== */
+
+.works-category {
+  margin-bottom: 80px;
+}
+
+.works-category h2 {
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+/* ===== Grid (Always 3 Columns) ===== */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+}
+
+/* ===== Item ===== */
+
+.works-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.works-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.works-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ===== Title ===== */
+
+.work-title {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.works-item:hover .work-title {
+  opacity: 0.8;
+}
+
+/* ===== About ===== */
+.about-container {
+  max-width: 460px;   
+  margin: 160px auto; 
+  padding: 0;
+}
+
+.about-title {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 80px;
+  letter-spacing: 0.13em;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+}
+
+.year {
+  font-size: 12px;
+  opacity: 0.4;
+  letter-spacing: 1px;
+}
+
+.detail {
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.13em;
+}
+
+@media (max-width: 768px) {
+
+  .about-container {
+    max-width: 420px;   
+    margin: 120px auto;
+    padding: 0 30px;    
+  }
+
+  .about-item {
+    grid-template-columns: 60px 1fr;
+    gap: 15px;
+  }
+
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+
+  .works {
+    padding: 120px 16px 40px;
+  }
+
+  .work {
+    margin-bottom: 80px;
+  }
+
+  .caption {
+    font-size: 10px;
+  }
+
+}
+
+/* ===== Series ===== */
+.series {
+  margin-bottom: 160px;
+}
+
+.series-title {
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  margin-bottom: 60px;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.site-name {
+  color: #fff;
+}
+.site-name,
+.menu-button,
+.menu a {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.menu-button {
+  width: 20px;
+  height: 10px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10000;
+}
+
+.menu-button span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+/* 上の線 */
+.menu-button span:first-child {
+  top: 0;
+}
+
+/* 下の線 */
+.menu-button span:last-child {
+  bottom: 0;
+}
+
+/* 開いたとき */
+.menu-button.active span:first-child {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-button.active span:last-child {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+
+/* ヘッダー分の余白 */
+main {
+  padding-top: 100px;
+}
+
+/* ===== Fullscreen Slideshow ===== */
+.hero {
+  height: 100vh;
+  padding: 0;
+}
+
+.slideshow {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover; 
+  display: block;
+}
+
+/* ヘッダー */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+
+/* =====overlay===== */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-header {
+  z-index: 10000;
+}
+
+.menu {
+  z-index: 9999;
+}
+
+.site-header {
+  z-index: 10000;
+}
+
+.menu {
+  z-index: 9999;
+}
+
+.zine-page {
+  background: #000;
+  color: #fff;
+}
+
+.zine-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 120px auto;
+}
+
+/* 3x3 グリッド */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   
+  object-fit: cover;
+  display: block;
+}
+
+/* 中央テキスト */
+.zine-text {
+  text-align: center;
+  margin: 120px 0;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  line-height: 2;
+}
+
+/* 正方形グリッド */
+.item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ライトボックス */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 元の比率で表示 */
+.lightbox img {
+  max-width: 70%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  transition: transform 0.3s ease;
+  transform: scale(0.96);
+}
+
+.lightbox.active img {
+  transform: scale(1);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Contact ===== */
+
+.contact-section {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  padding-top: 200px; 
+   
+}
+.contact-title {
+  font-size: 14px;
+  letter-spacing: 0.17em;
+  font-weight: 400;
+}
+
+.contact-message {
+  font-size: 12px;
+  letter-spacing: 1px;
+  letter-spacing: 0.13em;
+  font-weight: 400;
+}
+
+.contact-info {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.contact-mail a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.2s ease; /* ふわっと用 */
+  position: relative; 
+}
+
+.contact-mail a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;        
+  width: 0%;
+  height: 1px;          
+  background: #fff;     
+  transition: width 0.3s ease;
+}
+
+.contact-mail a:hover {
+  opacity: 1;
+  transform: translateY(-2px); 
+}
+
+.contact-mail a:hover::after {
+  width: 100%;          
+}
+
+.insta-icon {
+  width: 30px;
+  height: 30px;
+  fill: #fff; 
+  margin-top: 20px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.2s ease; /* 拡大用 */
+}
+
+.insta-link:hover .insta-icon {
+  opacity: 1;
+  transform: scale(1.2); 
+}
+
+.site-footer {
+  margin-top: 120px;
+  padding: 60px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.footer-links a {
+  margin-left: 24px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+
+.about-page {
+  background-image: url("../img/bg/aboutbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-page {
+  background-image: url("../img/bg/contactbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-page::before,
+.contact-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* 濃さ調整 */
+  z-index: -1;
+}
